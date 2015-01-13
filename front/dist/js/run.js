@@ -23,13 +23,8 @@ if(!Object.observe){
 
 	var peer = new Peer({
 		host: '/',
-		port: location.port,
-		path: '/peerjs',
-		config: {
-			'iceServers': [{
-				url: 'stun:stunserver.org'
-			}]
-		}
+		port: 8080,
+		path: '/peerjs'
 	});
 
 	var connections = [];
