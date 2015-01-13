@@ -23,7 +23,7 @@ if(!Object.observe){
 
 	var peer = new Peer({
 		host: '/',
-		port: 8080,
+		port: location.port ? location.port : 80,
 		path: '/peerjs'
 	});
 
