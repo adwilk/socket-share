@@ -13,7 +13,6 @@ module.exports = {
 			});
 		    
 		    hash(password, function(hashed){
-		    	console.log(hashed);
 		    	if(user[0] === null || user[0].username != username || user[0].password != hashed) {
 					return done(null, false);
 				}
