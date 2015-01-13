@@ -1,0 +1,120 @@
+@import "utils/mixins.less";
+
+.font-face("BentonSans");
+.font-face("BentonSans-Light");
+.font-face("BentonSans-ExtraLight");
+
+.reset();
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html, body{
+	box-sizing: border-box;
+	height:100%;
+	font-family:BentonSans, arial;
+	font-size:12px;
+	margin:0 auto;
+	.linear-gradient(top, #002040, #003366);
+	background-attachment:fixed;
+	color:#eee;
+
+	@media only screen and (min-width : 600px) {
+		font-size:16px;
+	} 
+}
+
+.log-in{
+	form{
+		width:100%;
+		max-width:300px;
+		padding:20px 0;
+		margin:0 auto;
+
+		@media only screen and (min-width : 600px) {
+			padding:0;
+			position:absolute;
+			top:50%;
+			left:50%;
+			margin:-104px 0 0 -150px;
+		}
+		
+		input{
+			font-family:BentonSans, arial;
+			font-size:1em;
+			width:100%;
+			padding:20px;
+			border:0;
+			display:block;
+			border-radius:5px;
+			margin-bottom:10px;
+
+			&[type=submit]{
+				background:#eee;
+				color:#003366;
+				cursor:pointer;
+			}
+		}
+	}
+}
+
+[router-view]{
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+  	transition:0.3s all ease-out;
+}
+
+.share-link, .connected, .disconnected{
+	h3{
+		font-size:1.5em;
+		text-align:center;
+		margin-bottom:20px;
+	}
+
+	input[type="text"]{
+		width:75%;
+		max-width:575px;
+		margin:0 auto;
+		font-size:1.5em;
+		background:#fff;
+		color:#333;
+		border-radius:5px;
+		padding:20px;
+		display:block;
+		border:none;
+	}
+
+	input[type="file"]{
+		outline: none;
+		width:75%;
+		max-width:575px;
+		margin:0 auto;
+		display:block;
+
+		&::-webkit-file-upload-button {
+			visibility: hidden;
+		}
+
+		&::before {
+			content: 'Click or drop here to send a file';
+			display: inline-block;
+			border-radius: 5px;
+			outline: none;
+			white-space: nowrap;
+			-webkit-user-select: none;
+			background:#eee;
+			color:#003366;
+			cursor:pointer;
+			padding:20px;
+			font-size:1.5em;
+			width:100%;
+			max-width:575px;
+		}
+	}	
+}
+
+.hide{
+	display:none;
+}

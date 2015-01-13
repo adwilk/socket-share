@@ -1,0 +1,18 @@
+<header class="{{newTechnology.type}}">
+	<h1>Add New Technology</h1>
+	<span class="back" ng-click="goBack()">Back</span>
+</header>
+<form>
+	<select ng-model="newTechnology.type">
+		<option value="" disabled selected>Technology Type</option>
+		<option value="tools">Tools</option>
+		<option value="techniques">Techniques</option>
+		<option value="languages">Languages and Frameworks</option>
+		<option value="platforms">Platforms</option>
+	</select>
+	<input placeholder="Technology Name" ng-model="newTechnology.name"/>
+	<input placeholder="Website" ng-model="newTechnology.website"/>
+	<textarea rows="5" placeholder="Description of Technology" ng-model="newTechnology.description"></textarea>
+	<input placeholder="Your Name" ng-model="newTechnology.author"/>
+	<span class="button {{newTechnology.type}}" ng-click="add(newTechnology)">Add Technology</span>
+</form>

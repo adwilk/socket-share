@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Transfer</title>
+        <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <body>
+        <div router-view></div>
+
+        <template id="create">
+            <div class="share-link">
+                <h3>Ask your recipients to visit</h3>
+                <input bind="link" type="text" readonly/>
+            </div>
+
+            <div class="connected hide">
+                <h3><span bind="peers"></span> connections active, ready to send</h3>
+                <input type="file" class="hide">
+            </div>
+        </template>
+
+        <template id="join">
+            <div class="connected">
+                <h3>Connected and ready to receive</h3>
+            </div>
+
+            <div class="hide disconnected">
+                <h3>Sender Disconnected</h3>
+            </div>
+        </template>
+
+        <template id="notSupported">
+            <h1>browser not supported</h1>
+        </template>
+
+        <script src="../resources/js/peer.js"></script>
+        <script src="../resources/js/router.js"></script>
+        <script src="../resources/js/bind.js"></script>
+        <script src="../resources/js/run.js"></script>
+        <script src="//localhost:35729/livereload.js"></script>
+    </body>
+</html>

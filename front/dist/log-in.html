@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+        <title>Transfer</title>
+        <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    </head>
+	<body class="log-in">
+		<form action="/log-in" method="post">
+			<label><input type="text" name="username" placeholder="Username"/></label>
+			<label><input type="password" name="password" placeholder="Password"/></label>
+			<input type="hidden" name="hash"/>
+			<input type="submit" name="action" value="Submit" />
+		</form>
+		<script>
+        	document.querySelector('[name="hash"]').setAttribute('value', location.hash.slice(1));
+        </script>
+	</body>
+</html>

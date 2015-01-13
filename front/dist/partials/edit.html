@@ -1,0 +1,26 @@
+<header class="{{technology.type}}">
+	<h1>Edit Technology</h1>
+	<span class="back" ng-click="goBack(technology._id)">Back</span>
+	<span class="back" ng-click="delete(technology._id)">Delete</span>
+</header>
+<form>
+	<select ng-model="technology.status">
+		<option value="" disabled selected>Status</option>
+		<option value="concept">Concept</option>
+		<option value="investigation">Investigation</option>
+		<option value="pilot">Pilot</option>
+		<option value="adoption">Adoption</option>
+	</select>
+	<select ng-model="technology.type">
+		<option value="" disabled selected>Technology Type</option>
+		<option value="tools">Tools</option>
+		<option value="techniques">Techniques</option>
+		<option value="languages">Languages and Frameworks</option>
+		<option value="platforms">Platforms</option>
+	</select>
+	<input placeholder="Technology Name" ng-model="technology.name"/>
+	<input placeholder="Website" ng-model="technology.website"/>
+	<textarea rows="5" placeholder="Description of Technology" ng-model="technology.description"></textarea>
+	<input placeholder="Your Name" ng-model="technology.author"/>
+	<span class="button {{technology.type}}" ng-click="edit(technology)">Save</span>
+</form>

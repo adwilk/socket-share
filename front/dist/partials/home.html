@@ -1,0 +1,23 @@
+<header>
+	<h1>Tech Radar</h1>
+	<a class="add" href="#/add">Add</a>
+	<div class="key">
+		<span ng-repeat="type in types" class="{{type}}" ng-class="{on: filterType==type}" ng-click="filterByType(type)">{{type}}</span>
+	</div>
+</header>
+<table>
+	<thead>
+		<tr>
+			<th ng-repeat="status in statuses">{{status}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td ng-repeat="status in statuses" drop-channel="card" ui-on-drop="move(status, $data)">
+				<div class="technologyCard {{technology.type}}" ng-repeat="technology in technologies | filter : {status:status} | filter:typeFilter" ui-draggable="true" drag="{{technology}}" drag-channel="card">
+					<h4 ng-click="openTechnology(technology._id)">{{technology.name}} <span>{{technology.comments.length}}</span></h4>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
