@@ -25,4 +25,4 @@ server.listen(activeProfile.express.port, activeProfile.express.ip, function() {
 });
 
 auth.init(passport);
-require("./routes")(app, passport, auth);
+require("./routes")(app, passport, auth, activeProfile.express.ip === '0.0.0.0');

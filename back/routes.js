@@ -1,4 +1,4 @@
-module.exports = function (app, passport, auth) {
+module.exports = function (app, passport, auth, dev) {
 	app.get('/', auth.isAuthenticated, function(req, res) {
 		if(req.session.hash){
 			var hash = req.session.hash;
@@ -6,7 +6,9 @@ module.exports = function (app, passport, auth) {
 			res.redirect('/#' + hash);
 		} else {
 			res.setHeader("X-UA-Compatible","IE=edge");
-			res.render(__dirname + '/../front/dist/index.html');
+			res.render(__dirname + '/../front/dist/index.html', {
+				livereload: dev
+			});
 		}		
 	});
 
