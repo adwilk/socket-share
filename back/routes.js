@@ -1,14 +1,13 @@
 module.exports = function (app, passport, auth) {
 	app.get('/', auth.isAuthenticated, function(req, res) {
-		res.setHeader("X-UA-Compatible","IE=edge");
-		
 		if(req.session.hash){
 			var hash = req.session.hash;
 			req.session.hash = null;
 			res.redirect('/#' + hash);
-		}
-
-		res.render(__dirname + '/../front/dist/index.html');
+		} else {
+			res.setHeader("X-UA-Compatible","IE=edge");
+			res.render(__dirname + '/../front/dist/index.html');
+		}		
 	});
 
 	app.get('/log-in', function(req, res) {
