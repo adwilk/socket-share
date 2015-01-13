@@ -1,5 +1,5 @@
 module.exports = function (app, passport, auth, dev) {
-	app.get('/', auth.isAuthenticated, function(req, res) {
+	app.get('/', function(req, res) { //app.get('/', auth.isAuthenticated, function(req, res) {
 		if(req.session.hash){
 			var hash = req.session.hash;
 			req.session.hash = null;
