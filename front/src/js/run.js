@@ -24,7 +24,8 @@ if(!Object.observe){
 	var peer = new Peer({
 		host: '/',
 		port: location.port ? location.port : 80,
-		path: '/peerjs'
+		path: '/peerjs',
+		debug: 3
 	});
 
 	var connections = [];
